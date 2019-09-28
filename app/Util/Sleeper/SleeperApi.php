@@ -53,10 +53,25 @@ class SleeperApi
     }
 
 
-    public function test()
-    {
-        $username = 'hotsaucejake';
+    /*
+     ***************************************************************************
+     * User
+     ***************************************************************************
+     *
+     * getUserByName($username = 'hotsaucejake')
+     * getUserById($userId = 465649790558924800)
+     * 
+     */
 
+    public function getUserByName($username = 'hotsaucejake')
+    {
         return $this->publicRequest('GET', 'v1/user/'.$username);
     }
+
+    public function getUserById($userId = 465649790558924800)
+    {
+        return $this->publicRequest('GET', 'v1/user/'.$userId);
+    }
+
+    
 } 

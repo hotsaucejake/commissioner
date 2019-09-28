@@ -13,8 +13,6 @@ class SleeperApi
 
     protected $api_url;
 
-    protected $base_url;
-
     protected $client;
 
     /**
@@ -151,7 +149,7 @@ class SleeperApi
     // Getting the playoff bracket
     public function getLeaguePlayoffLoserBracket($leagueId = 465649923983929344)
     {
-        return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/loses_bracket');
+        return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/losers_bracket');
     }
 
     // Get transactions
@@ -164,5 +162,49 @@ class SleeperApi
     public function getLeagueTradedPicks($leagueId = 465649923983929344)
     {
         return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/traded_picks');
+    }
+
+
+    /*
+     ***************************************************************************
+     * Drafts
+     ***************************************************************************
+     *
+     * getUserDrafts($userId = 465649790558924800, $sport = 'nfl', $season = 2019)
+     * getLeagueDrafts($leagueId = 465649923983929344)
+     * getDraft($draftId = 466678834456948736)
+     * getDraftPicks($draftId = 466678834456948736)
+     * getDraftTradedPicks($draftId = 466678834456948736)
+     *
+     */
+
+    // Get all drafts for user
+    public function getUserDrafts($userId = 465649790558924800, $sport = 'nfl', $season = 2019)
+    {
+        return $this->publicRequest('GET', 'v1/user/'.$userId.'/drafts/'.$sport.'/'.$season);
+    }
+
+    // Get all drafts for a league
+    public function getLeagueDrafts($leagueId = 465649923983929344)
+    {
+        return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/drafts');
+    }
+
+    // Get a specific draft
+    public function getDraft($draftId = 466678834456948736)
+    {
+        return $this->publicRequest('GET', 'v1/draft/'.$draftId);
+    }
+
+    // Get all picks in a draft
+    public function getDraftPicks($draftId = 466678834456948736)
+    {
+        return $this->publicRequest('GET', 'v1/draft/'.$draftId.'/picks');
+    }
+
+    // Get traded picks in a draft
+    public function getDraftTradedPicks($draftId = 466678834456948736)
+    {
+        return $this->publicRequest('GET', 'v1/draft/'.$draftId.'/traded_picks');
     }
 }

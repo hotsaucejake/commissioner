@@ -215,6 +215,7 @@ class SleeperApi
      *
      * getPlayers($sport = 'nfl')
      * getTrendingPlayers($sport = 'nfl', $type = 'add', $params = [])
+     *      * type = 'add' || 'drop'
      *
      */
 
@@ -228,5 +229,43 @@ class SleeperApi
     public function getTrendingPlayers($sport = 'nfl', $type = 'add', $params = ['lookback_hours' => 24, 'limit' => 25])
     {
         return $this->publicRequest('GET', 'v1/players/'.$sport.'/trending/'.$type, $params);
+    }
+
+
+    /*
+     ***************************************************************************
+     * Stats
+     ***************************************************************************
+     *
+     * getSeasonStats($sport = 'nfl', $seasonType = 'regular', $season = 2019)
+     *      * seasonType = 'regular' || 'pre' || 'post'
+     * getSeasonWeeklyStats($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
+     * getSeasonProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019)
+     * getSeasonWeeklyProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
+     *
+     */
+
+
+    public function getSeasonStats($sport = 'nfl', $seasonType = 'regular', $season = 2019)
+    {
+        return $this->publicRequest('GET', 'v1/stats/'.$sport.'/'.$seasonType.'/'.$season);
+    }
+
+
+    public function getSeasonWeeklyStats($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
+    {
+        return $this->publicRequest('GET', 'v1/stats/'.$sport.'/'.$seasonType.'/'.$season.'/'.$week);
+    }
+
+
+    public function getSeasonProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019)
+    {
+        return $this->publicRequest('GET', 'v1/projections/'.$sport.'/'.$seasonType.'/'.$season);
+    }
+
+
+    public function getSeasonWeeklyProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
+    {
+        return $this->publicRequest('GET', 'v1/projections/'.$sport.'/'.$seasonType.'/'.$season.'/'.$week);
     }
 }

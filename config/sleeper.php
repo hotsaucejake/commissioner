@@ -26,4 +26,4 @@ return [
     'urls' => [
         'api' => 'https://api.sleeper.app/',
     ],
-]; 
+];

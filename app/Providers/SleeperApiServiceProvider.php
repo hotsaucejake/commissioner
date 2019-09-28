@@ -5,7 +5,6 @@ namespace App\Providers;
 use App\Util\Sleeper\SleeperApi;
 use Illuminate\Support\ServiceProvider;
 
-
 class SleeperApiServiceProvider extends ServiceProvider
 {
     /**
@@ -19,7 +18,6 @@ class SleeperApiServiceProvider extends ServiceProvider
             return new SleeperApi;
         });
     }
-
 
     /**
      * Bootstrap services.

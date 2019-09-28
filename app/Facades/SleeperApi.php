@@ -10,4 +10,4 @@ class SleeperApi extends Facade
     {
         return 'sleeper-api';
     }
-} 
+}

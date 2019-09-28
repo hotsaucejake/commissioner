@@ -8,11 +8,14 @@ use GuzzleHttp\Client;
 class SleeperApi
 {
     protected $key;
-    protected $secret;
-    protected $api_url;
-    protected $base_url;
-    protected $client;
 
+    protected $secret;
+
+    protected $api_url;
+
+    protected $base_url;
+
+    protected $client;
 
     /**
      * Client constructor.
@@ -22,13 +25,11 @@ class SleeperApi
      */
     public function __construct(array $auth = null, array $urls = null)
     {
-        if(! $auth) 
-        {
+        if (! $auth) {
             $auth = config('sleeper.auth');
         }
 
-        if(! $urls) 
-        {
+        if (! $urls) {
             $urls = config('sleeper.urls');
         }
 
@@ -40,7 +41,6 @@ class SleeperApi
             'base_uri' => $this->api_url,
         ]);
     }
-    
 
     private function publicRequest($method = 'GET', $endpoint = 'AppStatus', $json = null, $params = [])
     {
@@ -49,9 +49,9 @@ class SleeperApi
             'query' => $params,
         ]);
         $result = json_decode($response->getBody()->getContents(), true);
+
         return $result;
     }
-
 
     /*
      ***************************************************************************
@@ -60,7 +60,7 @@ class SleeperApi
      *
      * getUserByName($username = 'hotsaucejake')
      * getUserById($userId = 465649790558924800)
-     * 
+     *
      */
 
     public function getUserByName($username = 'hotsaucejake')
@@ -73,7 +73,6 @@ class SleeperApi
         return $this->publicRequest('GET', 'v1/user/'.$userId);
     }
 
-
     /*
      ***************************************************************************
      * Avatars
@@ -81,7 +80,7 @@ class SleeperApi
      *
      * getAvatarFull($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
      * getAvatarThumbnail($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
-     * 
+     *
      */
 
     // Full size URL
@@ -95,7 +94,6 @@ class SleeperApi
     {
         return 'https://sleepercdn.com/avatars/thumbs/'.$avatarId;
     }
-
 
     /*
      ***************************************************************************
@@ -111,7 +109,7 @@ class SleeperApi
      * getLeaguePlayoffLoserBracket($leagueId = 465649923983929344)
      * getLeagueTransactions($leagueId = 465649923983929344, $round = 1)
      * getLeagueTradedPicks($leagueId = 465649923983929344)
-     * 
+     *
      */
 
     // Get all leagues for user
@@ -167,5 +165,4 @@ class SleeperApi
     {
         return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/traded_picks');
     }
-    
-} 
+}

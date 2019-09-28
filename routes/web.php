@@ -13,7 +13,7 @@
 
 Route::view('/', 'welcome');
 
-Route::get('/test', function() {
+Route::get('/test', function () {
     dd(SleeperApi::getLeagueTradedPicks());
 });
 

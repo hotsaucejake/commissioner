@@ -14,7 +14,7 @@
 Route::view('/', 'welcome');
 
 Route::get('/test', function() {
-    dd(SleeperApi::getAvatarFull());
+    dd(SleeperApi::getLeagueTradedPicks());
 });
 
 Auth::routes();

@@ -14,7 +14,7 @@
 Route::view('/', 'welcome');
 
 Route::get('/test', function() {
-    dd(SleeperApi::getUserById());
+    dd(SleeperApi::getAvatarFull());
 });
 
 Auth::routes();

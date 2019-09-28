@@ -73,5 +73,27 @@ class SleeperApi
         return $this->publicRequest('GET', 'v1/user/'.$userId);
     }
 
+
+    /*
+     ***************************************************************************
+     * Avatars
+     ***************************************************************************
+     *
+     * getAvatarFull($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
+     * getAvatarThumbnail($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
+     * 
+     */
+
+    public function getAvatarFull($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
+    {
+        return 'https://sleepercdn.com/avatars/'.$avatarId;
+    }
+
+
+    public function getAvatarThumbnail($avatarId = 'db7b742f6549b03367eb48ed1e328e5e')
+    {
+        return 'https://sleepercdn.com/avatars/thumbs/'.$avatarId;
+    }
+
     
 } 

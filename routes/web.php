@@ -14,7 +14,7 @@
 Route::view('/', 'welcome');
 
 Route::get('/test', function () {
-    dd(SleeperApi::getUserLeagues());
+    dd(SleeperApi::getPlayers());
 });
 
 Auth::routes();

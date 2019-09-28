@@ -40,10 +40,9 @@ class SleeperApi
         ]);
     }
 
-    private function publicRequest($method = 'GET', $endpoint = 'AppStatus', $json = null, $params = [])
+    private function publicRequest($method = 'GET', $endpoint = 'AppStatus', $params = [])
     {
         $response = $this->client->request($method, $endpoint, [
-            'json' => $json,
             'query' => $params,
         ]);
         $result = json_decode($response->getBody()->getContents(), true);
@@ -206,5 +205,28 @@ class SleeperApi
     public function getDraftTradedPicks($draftId = 466678834456948736)
     {
         return $this->publicRequest('GET', 'v1/draft/'.$draftId.'/traded_picks');
+    }
+
+
+    /*
+     ***************************************************************************
+     * Players
+     ***************************************************************************
+     *
+     * getPlayers($sport = 'nfl')
+     * getTrendingPlayers($sport = 'nfl', $type = 'add', $params = [])
+     *
+     */
+
+    // Fetch all players
+    public function getPlayers($sport = 'nfl')
+    {
+        return $this->publicRequest('GET', 'v1/players/'.$sport);
+    }
+
+    // Trending Players
+    public function getTrendingPlayers($sport = 'nfl', $type = 'add', $params = ['lookback_hours' => 24, 'limit' => 25])
+    {
+        return $this->publicRequest('GET', 'v1/players/'.$sport.'/trending/'.$type, $params);
     }
 }

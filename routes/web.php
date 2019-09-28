@@ -13,6 +13,10 @@
 
 Route::view('/', 'welcome');
 
+Route::get('/test', function() {
+    dd(SleeperApi::test());
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -163,7 +163,6 @@ class SleeperApi
         return $this->publicRequest('GET', 'v1/league/'.$leagueId.'/traded_picks');
     }
 
-
     /*
      ***************************************************************************
      * Drafts
@@ -207,7 +206,6 @@ class SleeperApi
         return $this->publicRequest('GET', 'v1/draft/'.$draftId.'/traded_picks');
     }
 
-
     /*
      ***************************************************************************
      * Players
@@ -231,7 +229,6 @@ class SleeperApi
         return $this->publicRequest('GET', 'v1/players/'.$sport.'/trending/'.$type, $params);
     }
 
-
     /*
      ***************************************************************************
      * Stats
@@ -245,24 +242,20 @@ class SleeperApi
      *
      */
 
-
     public function getSeasonStats($sport = 'nfl', $seasonType = 'regular', $season = 2019)
     {
         return $this->publicRequest('GET', 'v1/stats/'.$sport.'/'.$seasonType.'/'.$season);
     }
-
 
     public function getSeasonWeeklyStats($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
     {
         return $this->publicRequest('GET', 'v1/stats/'.$sport.'/'.$seasonType.'/'.$season.'/'.$week);
     }
 
-
     public function getSeasonProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019)
     {
         return $this->publicRequest('GET', 'v1/projections/'.$sport.'/'.$seasonType.'/'.$season);
     }
-
 
     public function getSeasonWeeklyProjections($sport = 'nfl', $seasonType = 'regular', $season = 2019, $week = 1)
     {

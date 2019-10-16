@@ -11,6 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::view('/', 'welcome');
+
+Route::get('/test', function () {
+    dd(SleeperApi::getSeasonWeeklyProjections());
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

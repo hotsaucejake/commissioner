@@ -72,10 +72,10 @@ class RegisterController extends Controller
         ]);
 
         // the first user to register is a super-admin
-        if(empty(User::first())) {
+        if (empty(User::first())) {
             $user->assignRole('super-admin');
         }
-        
+
         return $user;
     }
 }

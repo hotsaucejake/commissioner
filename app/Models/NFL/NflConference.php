@@ -15,11 +15,11 @@ class NflConference extends Model
 
     public function nfl_divisions()
     {
-        return $this->hasMany('App\\Models\\NFL\\NflDivision');
+        return $this->hasMany(\App\Models\NFL\NflDivision::class);
     }
 
     public function nfl_teams()
     {
-        return $this->hasManyThrough('App\\Models\\NFL\\NflTeam', 'App\\Models\\NFL\\NflDivision');
+        return $this->hasManyThrough(\App\Models\NFL\NflTeam::class, \App\Models\NFL\NflDivision::class);
     }
 }

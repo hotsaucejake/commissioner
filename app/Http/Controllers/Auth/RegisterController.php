@@ -68,7 +68,7 @@ class RegisterController extends Controller
         $empty_users = false;
 
         // the first user to register is a super-admin
-        if(empty(User::first())) {
+        if (empty(User::first())) {
             $empty_users = true;
         }
 
@@ -78,11 +78,10 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
         ]);
 
-        if($empty_users) {
+        if ($empty_users) {
             $user->assignRole('super-admin');
         }
-        
-        
+
         return $user;
     }
 }

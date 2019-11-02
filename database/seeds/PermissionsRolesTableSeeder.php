@@ -27,16 +27,13 @@ class PermissionsRolesTableSeeder extends Seeder
             'view_permissions', 'add_permissions', 'edit_permissions', 'delete_permissions', // 13
         ];
 
-        foreach($permissions as $permission)
-        {
+        foreach ($permissions as $permission) {
             Permission::create(['name' => $permission]);
         }
 
-        foreach($roles as $role)
-        {
+        foreach ($roles as $role) {
             $newRole = Role::create(['name' => $role]);
-            if($role === 'super-admin')
-            {
+            if ($role === 'super-admin') {
                 $newRole->syncPermissions($permissions);
             }
         }

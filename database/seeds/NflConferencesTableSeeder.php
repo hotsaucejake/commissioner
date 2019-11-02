@@ -3,7 +3,7 @@
 use App\Models\NFL\NflConference;
 use Illuminate\Database\Seeder;
 
-class NflDivisionsTableSeeder extends Seeder
+class NflConferencesTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.

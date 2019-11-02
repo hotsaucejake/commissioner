@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\NFL\NflTeam;
 use Illuminate\Database\Seeder;
 
 class NflTeamsTableSeeder extends Seeder
@@ -227,7 +228,7 @@ class NflTeamsTableSeeder extends Seeder
             'name' => '49ers',
             'slug' => 'SF',
         ]);
-        
+
         NflTeam::create([
             'nfl_division_id' => 8,
             'title' => 'Seattle',

@@ -13,15 +13,13 @@ class NflDivision extends Model
      */
     protected $fillable = ['nfl_conference_id', 'title', 'alias', 'slug'];
 
-
     public function nfl_conference()
     {
-        return $this->belongsTo('App\Models\NFL\NflConference');
+        return $this->belongsTo(\App\Models\NFL\NflConference::class);
     }
 
-    
     public function nfl_teams()
     {
-        return $this->hasMany('App\Models\NFL\NflTeam');
+        return $this->hasMany(\App\Models\NFL\NflTeam::class);
     }
 }

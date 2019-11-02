@@ -17,7 +17,7 @@ class CreateNflConferencesTable extends Migration
             $table->bigIncrements('id');
             $table->string('title');
             $table->string('alias');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

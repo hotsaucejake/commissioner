@@ -3,7 +3,7 @@
 use App\Models\NFL\NflConference;
 use Illuminate\Database\Seeder;
 
-class NflConferencesTableSeeder extends Seeder
+class NflDivisionsTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,7 +17,7 @@ class NflConferencesTableSeeder extends Seeder
             'alias' => 'AFC',
             'slug' => 'afc',
         ]);
-        
+
         NflConference::create([
             'title' => 'National Football Conference',
             'alias' => 'NFC',

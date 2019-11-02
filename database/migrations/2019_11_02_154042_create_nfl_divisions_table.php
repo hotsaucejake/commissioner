@@ -18,7 +18,7 @@ class CreateNflDivisionsTable extends Migration
             $table->bigInteger('nfl_conference_id')->unsigned();
             $table->string('title');
             $table->string('alias');
-            $table->string('slug');
+            $table->string('slug')->unique();
             $table->timestamps();
 
             $table->foreign('nfl_conference_id')->references('id')->on('nfl_conferences')->onDelete('cascade');

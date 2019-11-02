@@ -65,10 +65,23 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
+        $empty_users = false;
+
+        // the first user to register is a super-admin
+        if (empty(User::first())) {
+            $empty_users = true;
+        }
+
+        $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
         ]);
+
+        if ($empty_users) {
+            $user->assignRole('super-admin');
+        }
+
+        return $user;
     }
 }

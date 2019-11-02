@@ -13,13 +13,11 @@ class NflConference extends Model
      */
     protected $fillable = ['title', 'alias'];
 
-
     public function nfl_divisions()
     {
         return $this->hasMany('App\Models\NFL\NflDivision');
     }
 
-    
     public function nfl_teams()
     {
         return $this->hasManyThrough('App\Models\NFL\NflTeam', 'App\Models\NFL\NflDivision');

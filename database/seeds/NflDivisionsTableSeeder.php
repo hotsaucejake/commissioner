@@ -58,7 +58,7 @@ class NflDivisionsTableSeeder extends Seeder
             'nfl_conference_id' => 2,
             'title' => 'Southern Division',
             'alias' => 'NFC South',
-            'slug' => 'nfc-south'
+            'slug' => 'nfc-south',
         ]);
 
         NflDivision::create([

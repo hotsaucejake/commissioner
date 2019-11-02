@@ -15,7 +15,7 @@ class NflTeam extends Model
 
     public function nfl_division()
     {
-        return $this->belongsTo('App\Models\NFL\NflDivision');
+        return $this->belongsTo('App\\Models\\NFL\\NflDivision');
     }
 
     public function nfl_conference()

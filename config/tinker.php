@@ -29,7 +29,7 @@ return [
     */
 
     'dont_alias' => [
-        'App\Nova',
+        'App\\Nova',
     ],
 
 ];

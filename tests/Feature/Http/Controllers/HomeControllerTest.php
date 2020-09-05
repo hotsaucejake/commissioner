@@ -16,7 +16,7 @@ class HomeControllerTest extends TestCase
      */
     public function index_returns_an_ok_response()
     {
-        $user = factory(\App\User::class)->create();
+        $user = factory(\App\Models\User::class)->create();
 
         $response = $this->actingAs($user)->get(route('home'));
 

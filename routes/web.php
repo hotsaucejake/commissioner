@@ -1,7 +1,7 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use Illuminate\Support\Facades\Route;
-use App\Util\Sleeper\SleeperApi;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +16,4 @@ use App\Util\Sleeper\SleeperApi;
 
 Route::view('/', 'welcome');
 
-Route::get('/test', function () {
-    // dd(SleeperApi::getSeasonWeeklyProjections());
-});
+Route::any('/{any}', [FrontendController::class, 'index'])->where('any', '^(?!api).*$');

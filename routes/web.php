@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,10 +16,4 @@
 
 Route::view('/', 'welcome');
 
-Route::get('/test', function () {
-    dd(SleeperApi::getSeasonWeeklyProjections());
-});
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::any('/{any}', [FrontendController::class, 'index'])->where('any', '^(?!api).*$');

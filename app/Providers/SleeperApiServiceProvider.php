@@ -14,7 +14,7 @@ class SleeperApiServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->bind('sleeper-api', function () {
+        $this->app->bind('sleeperApi', function () {
             return new SleeperApi;
         });
     }

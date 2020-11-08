@@ -8,6 +8,6 @@ class SleeperApi extends Facade
 {
     protected static function getFacadeAccessor()
     {
-        return 'sleeper-api';
+        return 'sleeperApi';
     }
 }

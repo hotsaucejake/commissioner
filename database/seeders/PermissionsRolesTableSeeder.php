@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Permission;
 use Spatie\Permission\Models\Role;
@@ -16,8 +18,9 @@ class PermissionsRolesTableSeeder extends Seeder
         $roles = [
             'super-admin',      // 1
             'admin',            // 2
-            'manager',          // 3 - default role for all users
-            'decommissioned',   // 4
+            'commissioner',     // 3
+            'manager',          // 4 - default role for all users
+            'decommissioned',   // 5
         ];
 
         $permissions = [

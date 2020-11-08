@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use App\Models\NFL\NflConference;
 use Illuminate\Database\Seeder;
 

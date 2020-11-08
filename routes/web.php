@@ -1,5 +1,8 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Util\Sleeper\SleeperApi;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +17,5 @@
 Route::view('/', 'welcome');
 
 Route::get('/test', function () {
-    dd(SleeperApi::getSeasonWeeklyProjections());
+    // dd(SleeperApi::getSeasonWeeklyProjections());
 });
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');

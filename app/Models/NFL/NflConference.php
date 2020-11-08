@@ -11,7 +11,7 @@ class NflConference extends Model
      *
      * @var array
      */
-    protected $fillable = ['title', 'alias'];
+    protected $fillable = ['title', 'alias', 'slug'];
 
     public function nfl_divisions()
     {

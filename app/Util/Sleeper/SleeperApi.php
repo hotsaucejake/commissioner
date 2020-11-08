@@ -2,8 +2,8 @@
 
 namespace App\Util\Sleeper;
 
-use Arr;
 use GuzzleHttp\Client;
+use Illuminate\Support\Arr;
 
 class SleeperApi
 {
